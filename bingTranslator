@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 public class test_case {
 
@@ -39,8 +40,9 @@ public class test_case {
 		Thread.sleep(2000);
 		
 		//test case 
-			
-		
+		WebElement svgObj = driver.findElement(By.xpath("#audiosvg"));
+		Actions actionBuilder = new Actions(driver);
+		actionBuilder.click(svgObj).build().perform();
 		Thread.sleep(2000);
 		
 		//test case 
