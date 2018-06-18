@@ -1,0 +1,31 @@
+package dice;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class sle {
+	
+	public static void main(String[] args) throws InterruptedException {
+		
+		System.setProperty("webdriver.gecko.driver","/home/qainfotech/Downloads/geckodriver");
+		WebDriver driver=new FirefoxDriver();
+		driver.get("http://10.0.1.86/tatoc");
+		Thread.sleep(1000);
+		driver.findElement(By.linkText("Basic Course")).sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		driver.findElement(By.className("greenbox")).click();
+		Thread.sleep(1000);
+		
+		String abc=driver.findElement(By.id("answer")).getAttribute("class");
+		System.out.println(abc);
+		/*for(int i=0;i<5;i++) {
+			Thread.sleep(1000);
+			
+			driver.findElement(By.linkText("Repaint Box 2")).click();
+		}*/
+		
+		
+		
+	}
+
+}
